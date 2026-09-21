@@ -9,7 +9,7 @@ import time
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = "371537cd59f745d79fc1e96542c31031"
+API_KEY = "Api key paste area"
 
 WS_URL = (
     "wss://ws.twelvedata.com/v1/quotes/price"
