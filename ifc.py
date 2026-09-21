@@ -10,8 +10,8 @@ import os
 app = Flask(__name__)
 CORS(app)
 
-API_KEY = 
-os.getenv("Api key paste area")
+API_KEY = os.getenv("TWELVE_DATA_API_KEY")
+
 
 WS_URL = (
     "wss://ws.twelvedata.com/v1/quotes/price"
