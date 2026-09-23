@@ -452,9 +452,15 @@ def get_asset(symbol):
     }), 404
 
 
-# =========================================================
-# START
-# =========================================================
+# Start WebSocket when IFC backend is loaded
+
+worker = threading.Thread(
+    target=start_websocket,
+    daemon=True
+)
+
+worker.start()
+
 
 if __name__ == "__main__":
 
@@ -470,6 +476,7 @@ if __name__ == "__main__":
     )
 
     print("")
+
     print(
         "REST quote polling: DISABLED"
     )
@@ -479,18 +486,6 @@ if __name__ == "__main__":
     )
 
     print("")
-
-
-    worker = threading.Thread(
-
-        target=start_websocket,
-
-        daemon=True
-
-    )
-
-    worker.start()
-
 
     print(
         "Server:"
@@ -502,15 +497,9 @@ if __name__ == "__main__":
 
     print("")
 
-
     app.run(
-
         host="0.0.0.0",
-
         port=5000,
-
         debug=False,
-
         threaded=True
-
-    )
+    )=
